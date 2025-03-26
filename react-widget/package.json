@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "build:widget": "rollup -c ./rollup.config.mjs",
     "build:widget:production": "rollup -c ./rollup.config.mjs --environment=production",
-    "serve": "pnpm exec http-server ./ --cors -p 3333",
-    "serve:widget": "pnpm exec http-server ./dist --cors -p 3334",
+    "serve": "http-server ./ --cors -p 3333",
+    "serve:widget": "http-server ./dist --cors -p 3334",
     "dev:both": "concurrently \"pnpm run serve\" \"pnpm run serve:widget\""
   },
   "dependencies": {
@@ -37,12 +37,10 @@
     "@rollup/plugin-replace": "^6.0.2",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@tailwindcss/postcss": "^4.0.16",
     "@types/node": "^22.13.13",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
     "eslint": "^9.21.0",

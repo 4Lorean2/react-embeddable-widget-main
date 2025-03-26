@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .widget-container {
   position: fixed;
   bottom: 1.25rem; /* bottom-5 */
