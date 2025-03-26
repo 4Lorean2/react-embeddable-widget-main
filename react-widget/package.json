@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "build:widget": "rollup -c ./rollup.config.mjs",
-    "build:widget:production": "rollup -c ./rollup.config.mjs --environment=production"
+    "build:widget:production": "rollup -c ./rollup.config.mjs --environment=production",
+    "serve": "pnpm exec http-server ./ --cors -p 3333",
+    "serve:widget": "pnpm exec http-server ./dist --cors -p 3334"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.16",
