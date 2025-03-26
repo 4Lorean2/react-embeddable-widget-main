@@ -81,13 +81,21 @@ export default {
       ],
       extensions: [".js", ".jsx", ".ts", ".tsx", ".mjs"],
     }),
+    // postcss({
+    //   extensions: [".css"],
+    //   minimize: true,
+    //   extract: true,
+    //   inject: {
+    //     insertAt: "top",
+    //   },
+    // }),
+
     postcss({
-      extensions: [".css"],
+      // Burayı güncelle
+      extract: "widget.css",
       minimize: true,
-      extract: true,
-      inject: {
-        insertAt: "top",
-      },
+      inject: false,
+      extensions: [".css"],
     }),
     commonjs(),
     nodePolyfills({
