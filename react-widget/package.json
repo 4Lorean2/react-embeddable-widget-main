@@ -11,7 +11,8 @@
     "build:widget": "rollup -c ./rollup.config.mjs",
     "build:widget:production": "rollup -c ./rollup.config.mjs --environment=production",
     "serve": "pnpm exec http-server ./ --cors -p 3333",
-    "serve:widget": "pnpm exec http-server ./dist --cors -p 3334"
+    "serve:widget": "pnpm exec http-server ./dist --cors -p 3334",
+    "dev:both": "concurrently \"pnpm run serve\" \"pnpm run serve:widget\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.16",
@@ -25,6 +26,10 @@
     "tw-animate-css": "^1.2.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.27.0",
     "@eslint/js": "^9.21.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.3",
@@ -38,11 +43,13 @@
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "http-server": "^14.1.1",
     "postcss": "^8.5.3",
     "rollup": "^4.37.0",
     "rollup-plugin-inject-process-env": "^1.3.1",

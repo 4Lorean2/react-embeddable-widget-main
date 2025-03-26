@@ -10,7 +10,6 @@ import injectProcessEnv from "rollup-plugin-inject-process-env";
 import nodePolyfills from "rollup-plugin-polyfill-node";
 import postcss from "rollup-plugin-postcss";
 import tsConfigPaths from "rollup-plugin-tsconfig-paths";
-import { visualizer } from "rollup-plugin-visualizer";
 
 const args = parseArgs({
   options: {
@@ -28,7 +27,7 @@ const args = parseArgs({
 
 const env = args.values.environment;
 const production = env === "production";
-let environmentVariablesPath = "./.env.development";
+let environmentVariablesPath = ["./.env.development"];
 
 console.log(`Building widget for ${env} environment...`);
 
@@ -43,7 +42,7 @@ const ENV_VARIABLES = config({
 const fileName = ENV_VARIABLES.WIDGET_NAME || "widget.js";
 
 export default {
-  input: "./src/index.tsx",
+  input: "./src/widget/index.tsx",
   output: {
     file: `dist/${fileName}`,
     format: "iife",
@@ -107,6 +106,5 @@ export default {
       },
       output: { quote_style: 1 },
     }),
-    visualizer(),
   ],
 };
