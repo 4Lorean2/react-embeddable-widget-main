@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:widget": "rollup -c ./rollup.config.mjs",
+    "build:widget:production": "rollup -c ./rollup.config.mjs --environment=production"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.16",
