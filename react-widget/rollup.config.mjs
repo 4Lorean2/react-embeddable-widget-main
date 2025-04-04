@@ -81,22 +81,22 @@ export default {
       ],
       extensions: [".js", ".jsx", ".ts", ".tsx", ".mjs"],
     }),
-    // postcss({
-    //   extensions: [".css"],
-    //   minimize: true,
-    //   extract: true,
-    //   inject: {
-    //     insertAt: "top",
-    //   },
-    // }),
-
     postcss({
-      // Burayı güncelle
-      extract: "widget.css",
-      minimize: true,
-      inject: false,
       extensions: [".css"],
+      minimize: true,
+      extract: true,
+      inject: {
+        insertAt: "top",
+      },
     }),
+
+    // postcss({
+    //   // Burayı güncelle
+    //   extract: "widget.css",
+    //   minimize: true,
+    //   inject: false,
+    //   extensions: [".css"],
+    // }),
     commonjs(),
     nodePolyfills({
       exclude: ["crypto"],
